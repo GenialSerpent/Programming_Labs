@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "b7b6183c-903b-4768-bd5d-f0a51e6ef667",
+		"name": "WebApiDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJhZG1pbiIsIm5iZiI6MTY3OTQ3MDQ4OSwiZXhwIjoxNjc5NDc3Njg5LCJpYXQiOjE2Nzk0NzA0ODksImlzcyI6IkRlbW9XZWJBcHBKd3RJc3N1ZXIifQ.F72Yi5RPLRxO4yRxgf3jxnsde5fqViRtJaaIKZrZev0",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3VzZXJkYXRhIjoie1wiSWRcIjoxLFwiTmFtZVwiOlwiYWRtaW4xXCIsXCJFbWFpbFwiOlwiYWRtaW4xQG1haWwuY29tXCIsXCJpc0FkbWluXCI6ZmFsc2V9IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJuYmYiOjE2Nzk0MjM1NzEsImV4cCI6MTY3OTQzMDc3MSwiaWF0IjoxNjc5NDIzNTcxLCJpc3MiOiJEZW1vV2ViQXBwSnd0SXNzdWVyIn0.BTdU0GU-0iILP0aC-segBpTGfSuwll4yhA6zeGXJm8U",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3VzZXJkYXRhIjoie1wiSWRcIjoxLFwiTmFtZVwiOlwiYWRtaW4xXCIsXCJFbWFpbFwiOlwiYWRtaW4xQG1haWwuY29tXCIsXCJpc0FkbWluXCI6ZmFsc2V9IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJuYmYiOjE2Nzk0MjM1NzEsImV4cCI6MTY3OTQzMDc3MSwiaWF0IjoxNjc5NDIzNTcxLCJpc3MiOiJEZW1vV2ViQXBwSnd0SXNzdWVyIn0.BTdU0GU-0iILP0aC-segBpTGfSuwll4yhA6zeGXJm8U",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"user1\",\r\n    \"email\": \"user1@mail.com\",\r\n    \"password\": \"Pa$$w0rd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3VzZXJkYXRhIjoie1wiSWRcIjoxLFwiTmFtZVwiOlwiYWRtaW4xXCIsXCJFbWFpbFwiOlwiYWRtaW4xQG1haWwuY29tXCIsXCJpc0FkbWluXCI6ZmFsc2V9IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJuYmYiOjE2Nzk0MjM1NzEsImV4cCI6MTY3OTQzMDc3MSwiaWF0IjoxNjc5NDIzNTcxLCJpc3MiOiJEZW1vV2ViQXBwSnd0SXNzdWVyIn0.BTdU0GU-0iILP0aC-segBpTGfSuwll4yhA6zeGXJm8U",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"user1\",\r\n    \"email\": \"user1@mail.com\",\r\n    \"displayName\": \"User 1\",\r\n    \"age\": 21\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/users/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3VzZXJkYXRhIjoie1wiSWRcIjoxLFwiTmFtZVwiOlwiYWRtaW4xXCIsXCJFbWFpbFwiOlwiYWRtaW4xQG1haWwuY29tXCIsXCJpc0FkbWluXCI6ZmFsc2V9IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiYWRtaW4iLCJuYmYiOjE2Nzk0MjM1NzEsImV4cCI6MTY3OTQzMDc3MSwiaWF0IjoxNjc5NDIzNTcxLCJpc3MiOiJEZW1vV2ViQXBwSnd0SXNzdWVyIn0.BTdU0GU-0iILP0aC-segBpTGfSuwll4yhA6zeGXJm8U",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5000/api/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identity\": \"admin1@mail.com\",\r\n    \"secret\": \"Pa$$w0rd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/login/email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"login",
+								"email"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

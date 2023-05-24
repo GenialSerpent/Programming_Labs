@@ -1,0 +1,76 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script type="text/javascript">
+            "use strict";
+
+            const connection = new signalR.HubConnectionBuilder()
+                .withUrl("http://localhost:5000/hubs/chat", {
+                    skipNegotiation: true,
+                    transport: signalR.HttpTransportType.WebSockets,
+                    accessTokenFactory: () => document.getElementById("token").value,
+                })
+                .build();
+
+            async function start() {
+                try {
+                    await connection.stop();
+                    await connection.start();
+                    console.log("SignalR Connected.");
+                } catch (err) {
+                    console.log(err);
+                    setTimeout(start, 25000);
+                }
+            };
+
+            connection.onclose(async () => {
+                console.log("SignalR Disconnected.");
+            });
+
+            connection.on("Message", ({user, message}) => {
+                const li = document.createElement("li");
+                li.textContent = `${user.name}: ${message}`;
+                document.getElementById("messageList").appendChild(li);
+            });
+
+            // Handle button clicks
+            async function join() {
+                try {
+                    await connection.invoke("Join");
+                } catch (err) {
+                    console.error(err);
+                }
+            }
+
+            async function leave() {
+                try {
+                    await connection.invoke("Leave");
+                } catch (err) {
+                    console.error(err);
+                }
+            }
+
+            async function send() {
+                try {
+                    await connection.invoke("SendMessage", document.getElementById("message").value);
+                } catch (err) {
+                    console.error(err);
+                }
+            }
+    </script>
+</head>
+<body>
+    <div>
+        <input type="text" id="token" placeholder="Token" onchange="start()" />
+        <button onclick="join()">Join chat</button>
+        <button onclick="leave()">Leave chat</button>
+    </div>
+    <br />
+    <div>
+        <input type="text" id="message" placeholder="Text message" />
+        <button onclick="send()">Send</button>
+    </div>
+    <br />
+    <ul id="messageList"></ul>
+</body>
+</html>
